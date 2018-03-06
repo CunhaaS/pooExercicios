@@ -58,7 +58,14 @@ function numeros() {
     let numero1 = prompt ("Insira o primeiro numero:")
     let numero2 = prompt ("Insira o segundo numero:")
 
-    for (let i = numero1; i < numero2+1; i++) {
+    for (let i = parseInt(numero1); i < (parseInt(numero2) + 1); i++) {
         console.log(i)
+    }
+}
+function tabuada(){
+    let numero = prompt ("Escolha a tabuada")
+
+    for (let i = 1; i <= 10; i++) {
+        console.log (numero +" x "+ i + " = " + (numero*i))
     }
 }
