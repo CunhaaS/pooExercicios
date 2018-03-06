@@ -19,11 +19,28 @@
             let area = lado1 * lado2
             console.log("A area do seu rectangulo é: " + area)
         }
+        function calculadora(){
+            let numero1 = prompt ("digite um valor:")
+            let numero2 = prompt ("digite o outro valor:")
+            let valorAritmetico = prompt ("(+,*,-)")
+            let valorFinal
+            if(valorAritmetico == "+"){
+                valorFinal = parseInt(numero1) + parseInt(numero2)
+                console.log(valorFinal);
+            } else if(valorAritmetico == "*"){
+                valorFinal = parseInt(numero1) * parseInt(numero2)
+                console.log(valorFinal);
+            } else if(valorAritmetico == "-"){
+                valorFinal = parseInt(numero1) - parseInt(numero2)
+                console.log(valorFinal);
+            }
+        }
     </script>
 </head>
 <body>
     <input type="button" onclick="olaMundo()" value="Saudação">
     <input type="button" onclick="olaNome()" value="Saudação - Nome">
     <input type="button" onclick="areas()" value="Área">
+    <input type="button" onclick="calculadora()" value="Calculadora">
 </body>
 </html>
