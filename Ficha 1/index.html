@@ -5,42 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ficha 01</title>
-    <script>
-        function olaMundo(){
-            console.log("Olá Mundo!")
-        }
-        function olaNome(){
-            let nome = "José"
-            console.log("Olá "+nome+"!")
-        }
-        function areas(){
-            let lado1 = prompt ("digite um lado:")
-            let lado2 = prompt ("digite o outro lado:")
-            let area = lado1 * lado2
-            console.log("A area do seu rectangulo é: " + area)
-        }
-        function calculadora(){
-            let numero1 = prompt ("digite um valor:")
-            let numero2 = prompt ("digite o outro valor:")
-            let valorAritmetico = prompt ("(+,*,-)")
-            let valorFinal
-            if(valorAritmetico == "+"){
-                valorFinal = parseInt(numero1) + parseInt(numero2)
-                console.log(valorFinal);
-            } else if(valorAritmetico == "*"){
-                valorFinal = parseInt(numero1) * parseInt(numero2)
-                console.log(valorFinal);
-            } else if(valorAritmetico == "-"){
-                valorFinal = parseInt(numero1) - parseInt(numero2)
-                console.log(valorFinal);
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </head>
 <body>
     <input type="button" onclick="olaMundo()" value="Saudação">
     <input type="button" onclick="olaNome()" value="Saudação - Nome">
     <input type="button" onclick="areas()" value="Área">
     <input type="button" onclick="calculadora()" value="Calculadora">
+    <input type="button" onclick="imc()" value="IMC">
+    <input type="button" onclick="eco()" value="Eco">
+    <input type="button" onclick="numeros()" value="Numeros Repetidos">
 </body>
 </html>
