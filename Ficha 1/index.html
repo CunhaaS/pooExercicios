@@ -9,9 +9,21 @@
         function olaMundo(){
             console.log("Olá Mundo!")
         }
+        function olaNome(){
+            let nome = "José"
+            console.log("Olá "+nome+"!")
+        }
+        function areas(){
+            let lado1 = prompt ("digite um lado:")
+            let lado2 = prompt ("digite o outro lado:")
+            let area = lado1 * lado2
+            console.log("A area do seu rectangulo é: " + area)
+        }
     </script>
 </head>
 <body>
     <input type="button" onclick="olaMundo()" value="Saudação">
+    <input type="button" onclick="olaNome()" value="Saudação - Nome">
+    <input type="button" onclick="areas()" value="Área">
 </body>
 </html>
