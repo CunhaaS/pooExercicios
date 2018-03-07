@@ -32,15 +32,15 @@ function imc(){
     let altura = prompt ("digite a sua altura:")
     let peso = prompt ("digite o seu peso")
     let imc = parseFloat(peso) / (parseFloat(altura) * parseFloat(altura))
-    if( imc < 18.5){
+    if( parseFloat(imc) < 18.5){
         console.log("Abaixo de peso")
-    } else if(18.5 <= imc < 24.9){
+    } else if(18.5 < parseFloat(imc) && parseFloat(imc) < 24.9){
         console.log("Peso normal")
-    } else if(24.9 <= imc < 29.9){
+    } else if(24.9 < parseFloat(imc) && parseFloat(imc) < 29.9){
         console.log("Sobrepeso")
-    } else if(29.9 <= imc < 34.9){
+    } else if(29.9 < parseFloat(imc) && parseFloat(imc) < 34.9){
         console.log("Obesidade grau I")
-    } else if(34.9 <= imc < 39.9){
+    } else if(34.9 < parseFloat(imc) && parseFloat(imc) < 39.9){
         console.log("Obesidade grau II")
     } else {
         console.log("Obesidade grau III ou mórbida");
@@ -68,4 +68,40 @@ function tabuada(){
     for (let i = 1; i <= 10; i++) {
         console.log (numero +" x "+ i + " = " + (numero*i))
     }
+}
+function somadosmultiplosde3(){
+    let numero = prompt ("Escolha o 1 numero")
+    let numero2 = prompt ("Escolha o 2 numero")
+    let contadora = 0
+    for (let i = parseInt(numero); i <= parseInt(numero2); i++) {
+        if((i%3) == 0)
+        {
+            contadora = parseInt(contadora) + parseInt(i)
+        }
+    }
+    console.log(contadora)
+}
+function primos(){
+    let numero = prompt ("Escolha o numero")
+    let resultado
+    if (numero == 2)
+    {
+        console.log("Sim")
+    }
+    else
+    {
+        for (let i = 2; i < numero; i++) {
+            if((numero%i) == 0)
+            {
+                resultado = "Não"
+                break
+            }
+            else
+            {
+                resultado = "Sim"
+            }
+        }
+        console.log(resultado)
+    }
+    
 }
