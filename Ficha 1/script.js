@@ -105,3 +105,94 @@ function primos(){
     }
     
 }
+function fatorial(){
+    let numero = prompt ("Escolha o numero")
+    let resultado = 1
+    
+    for (let i = 1; i <= numero; i++) {
+        resultado = parseInt(resultado) * parseInt(i)
+    }
+    console.log(resultado)
+}
+
+function perfeito(){
+    let numero = parseInt(prompt ("Escolha o numero"))
+    let resultado = 0
+    
+    for (let i = 1; i < numero; i++) {
+        if((numero % i) == 0)
+        {
+            resultado = resultado + i
+        }
+    }
+    console.log(resultado)
+    if(numero == resultado)
+    {
+        console.log("Perfeito")
+    }
+    else
+    {
+        console.log("Não é perfeito")
+    }
+}
+function bissexto(){
+    let ano = parseInt(prompt ("Escolha o ano"))
+    if ((ano % 4 == 0) && (ano % 100 != 0) || (ano % 400 == 0))
+    {
+        console.log("Bissexto")
+    }
+    else
+    {
+        console.log("Não é Bissexto")
+    }
+}
+function palindromo(){
+    let numero = parseInt(prompt ("Escolha o numero entre 100-999"))
+    
+    if(numero >= 100 && numero <= 999)
+    {
+        let centena = parseInt(numero/100)
+        let unidade = parseInt(numero%10)
+        if(centena == unidade)
+        {
+            console.log("É capicua")
+        }
+        else
+        {
+            console.log("Não é capicua")
+        }
+    }
+    else
+    {
+        console.log("Numero não é válido")
+    }
+}
+function adivinha(){
+    let random = Math.floor((Math.random() * 100) + 1);
+    let contadora = 0
+    for (let i = 0; i < 5; i++) {
+        let numero = parseInt(prompt ("Escolha o numero entre 1-100"))
+        if(random == numero)
+        {
+            console.log("Acertaste!")
+            break
+        }
+        else
+        {
+            console.log("Errou!")
+            if(random > numero)
+            {
+                console.log("o número aleatório é maior")
+            }
+            else
+            {
+                console.log("O número aleatório é menor")
+            }
+            contadora++
+        }
+    }
+    if(contadora == 5)
+    {
+        console.log("Perdeu!")
+    }
+}
