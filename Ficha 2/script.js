@@ -124,12 +124,7 @@ function m(array) {
 }
 
 function n(array , array2) {   
-    let newArray = [] 
-    let contadora = 0
-    let contadora2 = 0
-    contadora = array.length
-    contadora2 = array2.length
-    let n = 0
+    let newArray = []
     for(let i = 0; i < array2.length ; i++) {
         newArray.push(parseInt(array[i]) + parseInt(array2[i]))
     }
