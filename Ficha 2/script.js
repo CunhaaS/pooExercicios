@@ -125,21 +125,11 @@ function m(array) {
 
 function n(array , array2) {   
     let newArray = [] 
-    let contadora = array.length
-    let contadora2 = array2.length
+    let contadora = 0
+    let contadora2 = 0
+    contadora = array.length
+    contadora2 = array2.length
     let n = 0
-    if(contadora > contadora2)
-    {
-        n = contadora
-    }
-    else if(contadora = contadora2)
-    {
-        n = contadora
-    }
-    else
-    {
-        n = contadora2
-    }
     for(let i = 0; i < array2.length ; i++) {
         newArray.push(parseInt(array[i]) + parseInt(array2[i]))
     }
