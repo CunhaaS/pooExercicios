@@ -141,7 +141,7 @@ function n(array , array2) {
         n = contadora2
     }
     for(let i = 0; i < array2.length ; i++) {
-        newArray[i] = parseInt(array[i]) + parseInt(array2[i])
+        newArray.push(parseInt(array[i]) + parseInt(array2[i]))
     }
     for(let i = 0; i < newArray.length; i++) {
         console.log(newArray[i])
