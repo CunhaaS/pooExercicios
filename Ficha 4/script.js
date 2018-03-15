@@ -74,7 +74,12 @@ function inserir(grades){
     
     let txt = ""
     let nome = prompt("Insira o seu Nome!")
-    let valor = prompt("Insira a sua Nota!")
+    let valor = parseInt(prompt("Insira a sua Nota!"))
+    let adiocionar = {
+        name : nome,
+        grade: valor
+    }
+    grades.push(adiocionar)
     for (let x in grades) 
     {
         txt += "nome: " + grades[x].name + " valor: " + grades[x].grade + "\n"
@@ -106,4 +111,15 @@ function notas(grades){
         
     }
     return(txt)
+}
+// Alinea C
+function funcC(){
+    let carros = [
+    ]
+    let inserido = inserirCarros(carros)
+    let alteraC = alterarCor(grades)
+    let alteraObj = alterarObjeto(grades)
+    show("C.a -> " + inserido)
+    show("C.b -> " + alteraC)
+    show("C.c -> " + alteraObj)
 }
