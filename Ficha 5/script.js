@@ -102,3 +102,130 @@ function func2() {
     console.log('area =', cir.getArea())
     console.log('perimetro =', cir.getCircunferencia())
 }
+// Exercício 3
+class Ventoinha {
+    
+    constructor(velocidade = 1, on = false){
+        this.velocidade = velocidade
+        this.ligado = on
+    }
+    //Propriedades
+    get velocidade() {
+        return this._velocidade
+    }
+    set velocidade(value){
+        let nova = prompt("Quer mudar a velocidade?")
+        if (nova == "Sim")
+        {
+            let outra = prompt("Velocidade : Baixa/Média/Alta")
+            if(outra == "Baixa")
+            {
+                this._velocidade = 1
+            }
+            else if( outra == "Média")
+            {
+                this._velocidade = 2
+            }
+            else if(outra == "Alta")
+            {
+                this._velocidade = 3
+            }
+        }
+        else
+        {
+            this._velocidade = value
+        }
+    }
+    // Propriedade Ligado
+    get ligado() {
+        return this._ligado
+    }
+    set ligado(value){
+        let nova = (prompt("Quer ligar/desligar a ventoinha?"))
+        if(nova == "Sim")
+        {
+            let outra = prompt(" A ventoinha está: " + value + "true = ligado, false = desligado")
+            if(outra == "Ligar")
+            {
+                this._ligado = true
+            }
+            else if(outra == "Desligar")
+            {
+                this._ligado = false
+            }
+        }else{
+            this._ligado = value
+        }
+    }
+    //Métodos
+    toString() {
+        let txt = ""
+        if(this._velocidade == 1)
+        {
+            txt = "Velocidade: Baixa;"
+        }
+        else if( this._velocidade == 2)
+        {
+            txt = "Velocidade: Média;"
+        }
+        else if(this._velocidade == 3)
+        {
+            txt = "Velocidade: Alta;"
+        }
+        if(this._ligado == true)
+        {
+            txt += " Ligado: Sim;"
+        }
+        else 
+        {
+            txt += " Ligado: Não;"
+        }
+        return txt
+    }
+}
+function func3() {
+    let vento = new Ventoinha()
+    let vento2 = new Ventoinha()
+    console.log("Ventoinha Padrão \n ")
+    console.log(vento.toString())
+    console.log("\nVentoinha Não Padrão")
+    console.log(vento2.toString())
+}
+// Exercício 4
+class Dado {
+    
+    constructor(face = 1){
+        this.faces = 6
+        this.valorFace = face
+    }
+    //Propriedades Face
+    get valorFace() {
+        return this._valorFace
+    }
+    set valorFace(value) {
+        if(value <=6 && value >= 1)
+        {
+            this._valorFace = value
+        }
+        else
+        {
+            console.log("Face não válida!")
+        }
+    }
+    //Métodos
+    Rolar() {
+        let nova = Math.floor((Math.random() * 6) + 1);
+        this._valorFace = nova
+        return this._valorFace
+    }
+    getQuantidadeFacesDado() {
+        return this.faces
+    }
+}
+
+function func4() {
+    let dado = new Dado()
+    console.log(dado.valorFace)
+    console.log(dado.Rolar())
+    console.log(dado.getQuantidadeFacesDado())
+}
