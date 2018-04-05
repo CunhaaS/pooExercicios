@@ -10,16 +10,18 @@
 <body>
     <form id="Login" action="">
         <label for="Nome">Nome</label>
-        <input type="text" name="" id="Nome" required>
+        <input type="text" name="" id="Nome" maxlength="50" autofocus required>
         <br><br>
         <label for="Morada">Morada</label>
         <input type="text" name="" id="Morada">
         <br><br>
         <label for="CodPostal">Código-Postal</label>
-        <input type="text" name="" id="CodPostal">
+        <input type="number" name="" id="CodPostal" maxlength="4">
+        <label> - </label>
+        <input type="number" name="" id="CodPostal" maxlength="3">
         <br><br>
         <label for="tel">Telemóvel</label>
-        <input type="number" name="" id="tel" required>
+        <input type="number" name="" id="tel" maxlength="9" required>
         <br><br>
         <label for="date">Data de Nascimento</label>
         <input type="date" name="" id="date" >
@@ -33,11 +35,11 @@
             <option value="sexoM">Masculino</option>
         </select>
         <br><br>
+        <label for="user">User</label>
+        <input type="text" name="" id="user" required>
+        <br><br>
         <label for="Email">E-mail</label>
         <input type="email" name="" id="Email" required>
-        <br><br>
-        <label for="User">Password</label>
-        <input type="text" name="" id="user" required>
         <br><br>
         <label for="Password">Password</label>
         <input type="password" name="" id="Pass" required>
