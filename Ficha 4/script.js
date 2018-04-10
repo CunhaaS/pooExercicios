@@ -113,92 +113,64 @@ function notas(grades){
     return(txt)
 }
 // Alinea C
-function funcC(){
-    function carro (nome, mat, cor, dep, comb) {
-        this.name = nome,
-        this.matricula = mat,
+let carros = []
+class Carro {
+    constructor(marca, matricula, cor, depositoAtual, tipoCombustivel) {
+        this.marca = marca
+        this.matricula = matricula
         this.cor = cor
-        this.deposito = dep
-        this.combustivel = comb
+        this.depositoAtual = depositoAtual
+        this.tipoCombustivel = tipoCombustivel
     }
 
-    let carros = new carro("Ford",'91-GH-15',"Verde",40,"Gasoleo")
-    let carros2 = new carro("Opel","23-AB-23","Branco",50,"Gasolina")
-    let txt1 = ""
-    for (let x in carros) 
-    {
-        txt1 = txt1 + "nome: " + carros[x] + "\n"
+    get marca() {
+        return this._marca
     }
-    let txt2 = ""
-    for (let x in carros) 
-    {
-        txt2 = txt2 + "nome: " + carros2[x] + "\n"
+
+    set marca(novaMarca) {
+        this._marca = novaMarca
     }
-    let mudarCor = mudarCorCarro(carros,carros2)
-    let quilometragem = gasolina(carros,carros2)
-    show("C.a -> " + txt1 + "\n" + txt2)
-    show("C.b -> " + mudarCor)
-    show("C.c -> " + quilometragem)
+
+    get cor() {
+        return this._cor
+    }
+
+    set cor(novaCor) {
+        this._cor = novaCor
+    }
+
+    get depositoAtual() {
+        return this._depositoAtual
+    }
+
+    set depositoAtual(novoDeposito) {
+        if (novoDeposito >= 0) {
+            this._depositoAtual = novoDeposito
+        } else {
+            console.log("Não é possível fazer esses kms com o depósito atual!")
+        }       
+    }
+
+    consumir(km) {
+        this.depositoAtual -= km * 5 / 100
+    }
 
 }
-function mudarCorCarro(carros,carros2) {
-    
-    let nome = prompt("Escolha a marca do carro: ")
-    let cor = prompt("Escolha a nova cor: ")
 
-    if(carros.name == nome) 
-    { 
-        carros.cor = cor 
-        let txt = ""
-        for (let x in carros) 
-        {
-            txt = txt + "nome: " + carros[x] + "\n"
-        }
-        return(txt)
-    }
-    else if(carros2.name == nome) 
-    { 
-        carros2.cor = cor
-        let txt = ""
-        for (let x in carros2) 
-        {
-            txt = txt + "nome: " + carros2[x] + "\n"
-        }
-        return(txt)
-    }
-    else 
-    {
-        return ("Não existe nenhum carro com esse nome")
-    }
-}
-function gasolina(carros,carros2) {
-    let nome = prompt("Digite aqui o nome do carro: ")
-    let kil = prompt("Numero de Km efetuados: ")
-    let gasolGasto = (51*kil)/100
-    if(carros.name == nome) 
-    { 
-        carros.deposito -= gasolGasto
-        let txt = ""
-        for (let x in carros) 
-        {
-            txt = txt + "nome: " + carros[x] + "\n"
-        }
-        return(txt)
-    }
-    else if(carros2.name == nome) 
-    { 
-        carros2.deposito -= gasolGasto
-        let txt = ""
-        for (let x in carros2) 
-        {
-            txt = txt + "nome: " + carros2[x] + "\n"
-        }
-        return(txt)
-    }
-    else 
-    {   
-        return ("Não existe nenhum carro com esse nome")
-    }
+function funcC() {
+    // Criação de 2 instâncias de carro
+    let meuCarro = new Carro("Ford","91-GH-15","verde", 40, "Gasóleo")
+    let meuCarro2 = new Carro("Opel","23-AB-23","brano", 50, "Gasolina")
+
+    // Adição das instâncias anteriores a um array
+    carros.push(meuCarro, meuCarro2)
+
+    // Analisar depósito do 2º carro
+    show("Depósito atual-> " + meuCarro2.depositoAtual)
+    meuCarro2.consumir(22)
+    show("Depósito atual-> " + meuCarro2.depositoAtual)
+    meuCarro2.consumir(11122)
+    show("Depósito atual-> " + meuCarro2.depositoAtual)
 }
 // Alinea D
 class Cylinder {
