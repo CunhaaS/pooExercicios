@@ -41,7 +41,6 @@ class Game {
     }
 
     set platforms(newPlatforms) {
-        console.log(newPlatforms)
         this._platforms = newPlatforms        
     }
 
